@@ -15,4 +15,8 @@ class TestSongs < MiniTest::Test
   def test_song_has_name
     assert_equal("In my Head", @song1.name)
   end
+
+  def test_play_song
+    assert_equal(@song1.plays, "#{@song1.name} is playing")
+  end
 end
