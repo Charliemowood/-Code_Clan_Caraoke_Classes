@@ -8,6 +8,11 @@ class TestPopRoom < MiniTest::Test
 
  def setup
    @guest1 = Guest.new("Charlie")
+   @guest2 = Guest.new("Tom")
+   @guest3 = Guest.new("Pavel")
+   @guest4 = Guest.new("Vasek")
+   @guest5 = Guest.new("Ana")
+   @guest6 = Guest.new("Jana")
    @song1 = Song.new("In my Head")
    @pop_room1 = PopRoom.new()
  end
@@ -30,5 +35,14 @@ class TestPopRoom < MiniTest::Test
      @song1.plays
      @pop_room1.checked_out(@guest1)
      puts "The party is on!"
+ end
+
+ def test_capacity_5
+    @pop_room1.checked_in(@guest1)
+    @pop_room1.checked_in(@guest2)
+    @pop_room1.checked_in(@guest3)
+    @pop_room1.checked_in(@guest4)
+    @pop_room1.checked_in(@guest5)
+    assert_equal("We are full.", @pop_room1.checked_in(@guest6))
  end
 end

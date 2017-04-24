@@ -12,7 +12,11 @@ class PopRoom
 
   def checked_in(guest)
     @guests << guest
-    return @guests.count
+     if @guests.count <= 5
+       return @guests.count
+     else
+       return "We are full."
+     end
   end
 
   def checked_out(guest)
