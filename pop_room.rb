@@ -1,6 +1,3 @@
-require_relative('./song.rb')
-require_relative('./guest.rb')
-
 class PopRoom
 
   def setup
@@ -22,11 +19,4 @@ class PopRoom
     @guests.delete(guest)
     return @guests.count
   end
-#
-#   def run_karaoke
-#     @pop_room1.checked_in(@guest1)
-# #   @song1.plays
-# #   @pop_room1.checked_out(@guest1)
-# #   return "The party is on!"
-#   end
 end
