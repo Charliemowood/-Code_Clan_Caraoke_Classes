@@ -7,12 +7,12 @@ require_relative('../guest')
 class TestPopRoom < MiniTest::Test
 
  def setup
-   @guest1 = Guest.new("Charlie", 10)
-   @guest2 = Guest.new("Tom", 10)
-   @guest3 = Guest.new("Pavel", 10)
-   @guest4 = Guest.new("Vasek", 10)
-   @guest5 = Guest.new("Ana", 10)
-   @guest6 = Guest.new("Jana", 10)
+   @guest1 = Guest.new("Charlie", 10, "Blue")
+   @guest2 = Guest.new("Tom", 10, "Red")
+   @guest3 = Guest.new("Pavel", 10, "White")
+   @guest4 = Guest.new("Vasek", 10, "Black")
+   @guest5 = Guest.new("Ana", 10, "Happy")
+   @guest6 = Guest.new("Jana", 10, "The rain")
    @song1 = Song.new("In my Head")
    @pop_room1 = PopRoom.new()
  end
@@ -32,6 +32,7 @@ class TestPopRoom < MiniTest::Test
  #
  def test_run_karaoke
      @pop_room1.checked_in(@guest1)
+     @pop_room1.paid(@guest1)
      @song1.plays
      @pop_room1.checked_out(@guest1)
      puts "The party is on!"

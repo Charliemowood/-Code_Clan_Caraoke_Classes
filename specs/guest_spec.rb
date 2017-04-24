@@ -5,7 +5,7 @@ require_relative('../guest')
 class TestGuests < MiniTest::Test
 
   def setup
-    @guest1 = Guest.new("Charlie", 10)
+    @guest1 = Guest.new("Charlie", 10, "Eye of a tiger")
   end
 
   def test_guest_class_exists
@@ -18,5 +18,9 @@ class TestGuests < MiniTest::Test
 
   def test_guest_has_money
     assert_equal(10, @guest1.money)
+  end
+
+  def test_guest_has_favourite_song
+    assert_equal("Eye of a tiger", @guest1.fav_song)
   end
 end

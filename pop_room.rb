@@ -1,7 +1,7 @@
 class PopRoom
 
   def setup
-    @guest1 = Guest.new("Charlie", 10)
+    @guest1 = Guest.new("Charlie", 10, "Eye of a tiger")
     @song1 = Song.new("In my Head")
     @pop_room1 = PopRoom.new()
   end
