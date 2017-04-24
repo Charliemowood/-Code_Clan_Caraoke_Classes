@@ -7,12 +7,12 @@ require_relative('../guest')
 class TestPopRoom < MiniTest::Test
 
  def setup
-   @guest1 = Guest.new("Charlie")
-   @guest2 = Guest.new("Tom")
-   @guest3 = Guest.new("Pavel")
-   @guest4 = Guest.new("Vasek")
-   @guest5 = Guest.new("Ana")
-   @guest6 = Guest.new("Jana")
+   @guest1 = Guest.new("Charlie", 10)
+   @guest2 = Guest.new("Tom", 10)
+   @guest3 = Guest.new("Pavel", 10)
+   @guest4 = Guest.new("Vasek", 10)
+   @guest5 = Guest.new("Ana", 10)
+   @guest6 = Guest.new("Jana", 10)
    @song1 = Song.new("In my Head")
    @pop_room1 = PopRoom.new()
  end
@@ -44,5 +44,9 @@ class TestPopRoom < MiniTest::Test
     @pop_room1.checked_in(@guest4)
     @pop_room1.checked_in(@guest5)
     assert_equal("We are full.", @pop_room1.checked_in(@guest6))
+ end
+
+ def test_guest_paid_entry_fee
+   assert_equal(5, @pop_room1.paid(@guest1))
  end
 end

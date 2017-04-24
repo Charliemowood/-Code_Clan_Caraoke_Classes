@@ -1,7 +1,7 @@
 class PopRoom
 
   def setup
-    @guest1 = Guest.new("Charlie")
+    @guest1 = Guest.new("Charlie", 10)
     @song1 = Song.new("In my Head")
     @pop_room1 = PopRoom.new()
   end
@@ -22,5 +22,10 @@ class PopRoom
   def checked_out(guest)
     @guests.delete(guest)
     return @guests.count
+  end
+
+  def paid(guest)
+    entry_fee = guest.money - 5
+    return entry_fee
   end
 end
