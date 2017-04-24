@@ -1,11 +1,11 @@
-require_relative('./songs.rb')
-require_relative('./guests.rb')
+require_relative('./song.rb')
+require_relative('./guest.rb')
 
 class PopRoom
 
   def setup
     @guest1 = Guest.new("Charlie")
-    @song1 = Songs.new("In my Head")
+    @song1 = Song.new("In my Head")
     @pop_room1 = PopRoom.new()
   end
 
