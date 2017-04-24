@@ -1,6 +1,6 @@
 require('minitest/autorun')
 require('minitest/emoji')
-require_relative('../guests')
+require_relative('../guest')
 
 class TestGuests < MiniTest::Test
 

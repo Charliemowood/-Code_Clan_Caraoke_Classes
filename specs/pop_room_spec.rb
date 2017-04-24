@@ -1,14 +1,14 @@
 require('minitest/autorun')
 require('minitest/emoji')
 require_relative('../pop_room')
-require_relative('../songs')
-require_relative('../guests')
+require_relative('../song')
+require_relative('../guest')
 
 class TestPopRoom < MiniTest::Test
 
  def setup
    @guest1 = Guest.new("Charlie")
-   @song1 = Songs.new("In my Head")
+   @song1 = Song.new("In my Head")
    @pop_room1 = PopRoom.new()
  end
 
